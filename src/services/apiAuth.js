@@ -5,7 +5,6 @@ export async function signup({fullName, email, password}) {
    const {data, error} =  await supabase.auth.signUp({
      email,
      password,
-    //cette partie d'options permet d'ajouter des données facultatifs à l'utilisateur
     options: {
       data: {
         fullName,
@@ -13,7 +12,8 @@ export async function signup({fullName, email, password}) {
       }
     }
    })
-  if (error) throw new Error(error.message)
+  if (error)
+    throw new Error(error.message)
   
   return data
 }

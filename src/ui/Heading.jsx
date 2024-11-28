@@ -6,6 +6,7 @@ ${(props)=>props.as === 'h1' &&
 css`
  font-size:3rem;
  font-weight:600;
+ text-align:center;
 `}
 
 ${(props)=>props.as === 'h2' && 
