@@ -90,7 +90,7 @@ console.log(data)
   
       return (
         <StyledSalesChart>
-          <Heading as="h2">sales</Heading>
+          <Heading as="h2">sales from {format(allDays.at(0), "MMM /dd/yyyy")} &mdash;{" "} {format(allDays.at(-1), "MMM/dd/yyyy")}{" "} </Heading>
              <ResponsiveContainer   height={300} width="100%" >
           <AreaChart data={data} >
             <XAxis dataKey="label" tick={{fill:colors.text}} tickLine={{stroke:colors.text}}/>  
