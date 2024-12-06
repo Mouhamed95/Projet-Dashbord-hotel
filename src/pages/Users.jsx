@@ -1,11 +1,12 @@
 import SignupForm from "../features/authentication/SignupForm";
+import Button from "../ui/Button";
 import Heading from "../ui/Heading";
 
 function NewUsers() {
   return (
     <>
     <Heading as="h1">
-    Create a new user
+    <Button size="large">Create a new user</Button>  
       </Heading>
       <SignupForm/>
       </>
