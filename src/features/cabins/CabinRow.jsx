@@ -51,7 +51,9 @@ const Discount = styled.div`
 
 function CabinRow({cabin}) {
   const {isDeleting, deleteCabin} = useDeleteCabin()
-  const {isCreating, createCabin} = useCreateCabin()
+  const { isCreating, createCabin } = useCreateCabin()
+  
+  console.log(isCreating)
  
   const {
     id:cabinId,
@@ -114,7 +116,7 @@ function CabinRow({cabin}) {
       
        
         <Modal.Window name="edit">
-         <CreateCabinForm cabinToEdit={cabin}/>
+         <CreateCabinForm cabinToEdit={cabin} disabled={isCreating}/>
         </Modal.Window>
 
 

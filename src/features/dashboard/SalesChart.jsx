@@ -50,7 +50,7 @@ const fakeData = [
   { label: "Feb 06", totalSales: 1450, extrasSales: 400 },
 ];
 
-
+console.log(fakeData)
 
 
 function SalesChart({bookings, numDays}) {
@@ -61,8 +61,7 @@ function SalesChart({bookings, numDays}) {
     end:new Date(),
   })
 
-  console.log(allDays)
-  
+ 
   const data = allDays.map((date) => {
     return {
       label: format(date, "MMM dd"),
@@ -72,7 +71,7 @@ function SalesChart({bookings, numDays}) {
         isSameDay(date, new Date(booking.created_at))).reduce((acc,cur)=> acc + cur.extrasPrice,0)
     }
   })
-console.log(data)
+
 
   const colors = isDarkMode
     ? {
@@ -95,7 +94,7 @@ console.log(data)
           <AreaChart data={data} >
             <XAxis dataKey="label" tick={{fill:colors.text}} tickLine={{stroke:colors.text}}/>  
             <YAxis unit="$" tick={{fill:colors.text}} tickLine={{stroke:colors.text}} />
-            {/* <CartesianGrid strokeDasharray="10" />   */}
+            <CartesianGrid strokeDasharray="10" />  
             <Tooltip contentStyle={{backgroundColor:colors.background}} />    
               <Area dataKey="totalSales"
                 type="monotone"
